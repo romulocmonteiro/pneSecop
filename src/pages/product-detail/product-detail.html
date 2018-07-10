@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar class="night_mode">
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="night_mode">
+
+  <h2 class="night_mode">{{ product.title }}</h2>
+
+  
+  <ion-card style="align-items: center; background-color:transparent; box-shadow: 0px transparent; -webkit-box-shadow: 0px transparent;">
+    <ion-slides pager centeredSlides>
+    <ion-slide>
+      <img class="slide" [src]="product.slide01img">
+      <p class="night_mode">{{ product.slide01sub }}</p>
+      <br><br>
+    </ion-slide>
+    <ion-slide>
+      <img class="slide" [src]="product.slide02img">
+      <p class="night_mode">{{ product.slide02sub }}</p>
+      <br><br>
+    </ion-slide>
+    </ion-slides>
+</ion-card>
+
+<p class="night_mode">{{ product.description }}</p>
+
+<button ion-button block onclick="window.open('https://www.petronect.com.br/irj/go/km/docs/pccshrcontent/TreinamentosForn/apresentacaoinstitucional-maio2018-pt.pdf', '_system', 'location=yes');">Veja mais</button>
+
+</ion-content>

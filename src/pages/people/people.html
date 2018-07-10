@@ -1,0 +1,24 @@
+
+<ion-header>
+  <ion-navbar class="night_mode">
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="night_mode">
+    <ion-card-header class="night_mode">
+      Nosso Time
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item class="day_mode" *ngFor="let people of json_people" (click)="openPeopleDetailPage(people)">
+        <ion-avatar item-start>
+          <img [src]="'assets/images/' + people.avatar">
+        </ion-avatar>
+        {{ people.name }}
+      </ion-item>
+    </ion-list>
+
+  </ion-card>
+
+</ion-content>

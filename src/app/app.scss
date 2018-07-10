@@ -1,16 +1,164 @@
-// http://ionicframework.com/docs/theming/
+// Customizações da barra superior de menu
+ion-navbar.day_mode .toolbar-background,
+ion-toolbar.day_mode.toolbar.toolbar-md,
+ion-toolbar.day_mode.toolbar.toolbar-ios {
+  background-color: $bg-color-light;
+  background-image: $logo-dark;
+  background-size: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+ion-navbar.night_mode .toolbar-background,
+ion-toolbar.night_mode.toolbar.toolbar-md,
+ion-toolbar.night_mode.toolbar.toolbar-ios{
+  background-color: $bg-color-dark;
+  background-image: $logo-light;
+  background-size: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.loading-md .loading-wrapper,
+.loading-ios .loading-wrapper {
+  background-color: $bg-color-dark;
+  -webkit-box-shadow: 2px 2px 2px $my-primary;
+  box-shadow: 2px 2px 5px $my-primary;
+  border-radius: 2px;
+  max-width: 280px;
+  max-height: 50%;
+  color: white;
+  padding: 24px;
+}
 
+// Customizações da barra inferior de menu
+ion-tabs.day_mode .tabbar.show-tabbar {
+  background-color: $bg-color-light;
+}
+ion-tabs.night_mode .tabbar.show-tabbar {
+  background-color: $bg-color-dark;
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+// Customizações da área principal das telas
+ion-content.day_mode.content.content-md.has-refresher,
+ion-content.day_mode.content.content-ios.has-refresher {
+  background-image: $bg-img-light;
+  background-color: $bg-color-light;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 20px;
+  text-align: justify;
+  color: $font-dark
+}
+ion-content.night_mode.content.content-md > .scroll-content,
+ion-content.night_mode.content.content-ios > .scroll-content,
+.scroll-content {
+  background-image: $bg-img-dark;
+  background-color: $bg-color-dark;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 20px;
+  text-align: justify;
+  color: $font-light
+}
+ion-card.night_mode.card.card-md,
+ion-card.night_mode.card.card-ios,
+ion-card-header.night_mode {
+  background-color: $bg-color-dark;
+  text-align: left;
+  color: $font-light;
+  margin: 0px;
+  width: 100%;
+}
+
+ion-card img {
+  display: initial;
+  width: 100%;
+}
+
+.item-md ion-icon[item-left] + .item-inner,
+.item-md ion-icon[item-left] + .item-input,
+.item-md ion-icon[item-start] + .item-inner,
+.item-md ion-icon[item-start] + .item-input {
+  margin-left: 12px;
+}
+
+// Customizações dos itens da tela
+ion-item.day_mode {
+  background-color: $bg-color-light;
+  color: $font-dark;
+  font-size: 1.3rem;
+  //display: inline-block;
+}
+ion-item.night_mode {
+  background-color: $bg-color-dark;
+  color: $font-light;
+  font-size: 1.3rem;
+  //display: inline-block;
+}
+
+//Janela popover
+ion-item.item.item-block.item-ios.item-radio,
+ion-item.item.item-block.item-md.item-radio  {
+  background-color: $bg-color-dark;
+  color: $font-light;
+  font-size: 1.3rem;
+}
+
+button.day_mode.item.item-block.item-ios, 
+button.day_mode.item.item-block.item-md {
+  padding-left: 10px;
+  background-color: $bg-color-light;
+  color: $font-dark;
+  font-size: 1.4rem;
+  padding-left: 16px;
+}
+button.night_mode.item.item-block.item-ios, 
+button.night_mode.item.item-block.item-md {
+  padding-left: 10px;
+  background-color: $bg-color-dark;
+  color: $font-light;
+  font-size: 1.4rem;
+  padding-left: 16px;
+}
+
+button.disable-hover.bar-buttons.bar-buttons-md.bar-button.bar-button-md.bar-button-default.bar-button-default-md.bar-button-menutoggle.bar-button-menutoggle-md,
+button.disable-hover.bar-buttons.bar-buttons-ios.bar-button.bar-button-ios.bar-button-default.bar-button-default-ios.bar-button-menutoggle.bar-button-menutoggle-ios {
+  color: $font-light;
+}
+
+// Botoes na barra de menu para iOS
+.bar-button-default-ios,
+.bar-button-default.bar-button-ios-default,
+.bar-button-clear-ios-default {
+  font-weight: 600;
+  font-size: small;
+}
+
+ion-refresher {
+  height: 100px;
+  background-color: $bg-color-dark;
+}
+
+// Customizações de tags de HTML padrão
+p.day_mode {
+  color: $font-dark;
+  font-size: 1.4rem;
+}
+p.night_mode {
+  color: $font-light;
+  font-size: 1.4rem;
+}
+h2.day_mode, h4.day_mode {
+  color: $font-dark;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+h2.night_mode, h4.night_mode {
+  color: $font-light;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+img.slide{
+  max-height: 200px;
+}

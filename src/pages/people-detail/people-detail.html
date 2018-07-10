@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar class="night_mode">
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="night_mode">
+
+  <ion-card>
+
+      <ion-item class="night_mode" text-wrap>
+        <ion-avatar item-start>
+          <img [src]="'assets/images/' + people.avatar">
+        </ion-avatar>
+        <h2 class="night_mode">{{ people.name }}</h2>
+        {{ people.job }}
+      </ion-item>
+    
+      <img [src]="'assets/images/' + people.avatar"> style="width: 100%; position: center;">
+    
+      <ion-card-content>
+        <p class="day_mode">{{ people.profile }}</p>
+      </ion-card-content>
+    
+      <button ion-item class="day_mode">
+        <ion-icon name="md-mail" item-start></ion-icon>
+        <p style="font-size: 1.3rem">{{ people.email }}</p>
+      </button>
+    
+      <button ion-item class="day_mode" (click)="openLinkedinProfile(people.linkedin)">
+        <ion-icon name="logo-linkedin" item-start></ion-icon>
+        <p style="font-size: 1.3rem">{{ people.linkedin }}</p>
+      </button>
+
+      </ion-card>
+
+</ion-content>

@@ -1,0 +1,20 @@
+
+<ion-header>
+  <ion-navbar class="night_mode">
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="night_mode">
+    <ion-card-header class="night_mode">
+      Produtos
+    </ion-card-header>
+
+    <button ion-item class="day_mode" *ngFor="let product of json_products" (click)="openProductDetailPage(product)">
+      <ion-icon [name]="product.icon" item-start></ion-icon>
+      {{ product.title }}
+    </button>
+
+  </ion-card>
+
+</ion-content>

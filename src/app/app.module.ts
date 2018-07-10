@@ -1,30 +1,51 @@
+import { NgModule, ErrorHandler } from '@angular/core';
+import { HttpModule } from "@angular/http";
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { FileOpener } from '@ionic-native/file-opener'; 
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { PneSecop2018 } from './app.component';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { TabsPage } from '../pages/tabs/tabs';
+import { IntroPageModule } from '../pages/intro/intro.module';
+import { ProductsPageModule } from '../pages/products/products.module';
+import { ProductDetailPageModule } from '../pages/product-detail/product-detail.module';
+import { AboutPageModule } from '../pages/about/about.module';
+import { PeoplePageModule } from '../pages/people/people.module';
+import { PeopleDetailPageModule } from '../pages/people-detail/people-detail.module';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    PneSecop2018, 
+    TabsPage
   ],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    BrowserModule, 
+    IonicModule.forRoot(PneSecop2018),
+    IntroPageModule,
+    ProductsPageModule,
+    ProductDetailPageModule,
+    PeoplePageModule,
+    PeopleDetailPageModule,
+    AboutPageModule
   ],
-  bootstrap: [IonicApp],
+  bootstrap: [
+    IonicApp
+  ],
   entryComponents: [
-    MyApp,
-    HomePage
-  ],
+    PneSecop2018, 
+    TabsPage],
   providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    StatusBar, 
+    SplashScreen, { 
+      provide: ErrorHandler, 
+      useClass: IonicErrorHandler 
+    },
+    FileOpener
   ]
 })
-export class AppModule {}
+export class AppModule { }
