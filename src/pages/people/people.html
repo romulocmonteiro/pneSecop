@@ -5,15 +5,15 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="night_mode">
+  <ion-card style="align-items: center; background-color:rgba(180, 184, 197, 0.3); box-shadow: 0px transparent; -webkit-box-shadow: 0px transparent;">
     <ion-card-header class="night_mode">
       Nosso Time
     </ion-card-header>
 
     <ion-list>
-      <ion-item class="day_mode" *ngFor="let people of json_people" (click)="openPeopleDetailPage(people)">
+      <ion-item class="night-mode" *ngFor="let people of json_people" style="font-size: 2vh; color: white; background-color:rgba(180, 184, 197, 0.3); box-shadow: 0px transparent; -webkit-box-shadow: 0px transparent;" (click)="openPeopleDetailPage(people)">
         <ion-avatar item-start>
-          <img [src]="'assets/images/' + people.avatar">
+          <img [src]="'assets/images/' + people.avatar" style="width:40px; height:auto;">
         </ion-avatar>
         {{ people.name }}
       </ion-item>

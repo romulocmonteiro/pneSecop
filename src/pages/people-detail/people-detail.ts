@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 @IonicPage()
 @Component({
@@ -10,7 +11,11 @@ export class PeopleDetailPage {
   
   people;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private toastCtrl: ToastController, 
+    private emailComposer: EmailComposer) {
     this.people = navParams.data.people;
   }
 
@@ -29,6 +34,27 @@ export class PeopleDetailPage {
       });
       toast.present();
     }
+  }
+
+  sendEmail(email_to) {
+
+    let email = {
+      to: email_to,
+      cc: '',
+      //bcc: ['john@doe.com', 'jane@doe.com'],
+      //attachments: [
+      //  'file://img/logo.png',
+      //  'res://icon.png',
+      //  'base64:icon.png//iVBORw0KGgoAAAANSUhEUg...',
+      //  'file://README.pdf'
+      //],
+      subject: 'Petronect - SECOP 2018',
+      body: 'Petronect - SECOP 2018',
+      isHtml: true
+    };
+
+    this.emailComposer.open(email);
+
   }
 
   ionViewDidLoad() {

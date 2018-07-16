@@ -3,6 +3,7 @@ import { HttpModule } from "@angular/http";
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { FileOpener } from '@ionic-native/file-opener'; 
+import { EmailComposer } from '@ionic-native/email-composer';
 
 import { PneSecop2018 } from './app.component';
 
@@ -16,6 +17,7 @@ import { ProductDetailPageModule } from '../pages/product-detail/product-detail.
 import { AboutPageModule } from '../pages/about/about.module';
 import { PeoplePageModule } from '../pages/people/people.module';
 import { PeopleDetailPageModule } from '../pages/people-detail/people-detail.module';
+import { SurveyPageModule } from '../pages/survey/survey.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { PeopleDetailPageModule } from '../pages/people-detail/people-detail.mod
     ProductDetailPageModule,
     PeoplePageModule,
     PeopleDetailPageModule,
-    AboutPageModule
+    AboutPageModule,
+    SurveyPageModule
   ],
   bootstrap: [
     IonicApp
@@ -45,7 +48,8 @@ import { PeopleDetailPageModule } from '../pages/people-detail/people-detail.mod
       provide: ErrorHandler, 
       useClass: IonicErrorHandler 
     },
-    FileOpener
+    FileOpener,
+    EmailComposer
   ]
 })
 export class AppModule { }

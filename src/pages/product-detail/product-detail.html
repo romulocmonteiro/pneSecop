@@ -5,26 +5,87 @@
 
 <ion-content padding class="night_mode">
 
-  <h2 class="night_mode">{{ product.title }}</h2>
+<ion-card style="align-items: center; background-color:rgba(180, 184, 197, 0.3); box-shadow: 0px transparent; -webkit-box-shadow: 0px transparent;">
 
+  <ion-card-header class="night_mode">
+    {{ product.title }}
+  </ion-card-header>
   
-  <ion-card style="align-items: center; background-color:transparent; box-shadow: 0px transparent; -webkit-box-shadow: 0px transparent;">
-    <ion-slides pager centeredSlides>
-    <ion-slide>
-      <img class="slide" [src]="product.slide01img">
-      <p class="night_mode">{{ product.slide01sub }}</p>
-      <br><br>
+  <ion-slides pager>
+    <ion-slide *ngFor="let img of product.img">
+      <img [src]="img">
     </ion-slide>
+  </ion-slides>
+
+
+  <ion-slides pager>
+
     <ion-slide>
-      <img class="slide" [src]="product.slide02img">
-      <p class="night_mode">{{ product.slide02sub }}</p>
-      <br><br>
+      <button ion-button block style="font-size: 4vw;">
+        <STRONG>O QUE É A SOLUÇÃO?</STRONG>
+      </button>
+      <BR>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-1>
+            <img src="assets/images/green-bullet.png" style="width:40px; height:auto;">
+          </ion-col>
+          <ion-col>
+            <p class="night_mode" style="font-size: 4vw; text-align: left;">
+                {{ product.slide_desc_01 }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <BR><BR>
     </ion-slide>
-    </ion-slides>
+
+    <ion-slide>
+      <button ion-button block style="font-size: 4vw;">
+        <STRONG>SIMPLIFICAÇÃO DO SEU PROCESSO</STRONG>
+      </button>
+      <BR>
+      <ion-grid>
+        <ion-row *ngFor="let item of product.slide_desc_02">
+          <ion-col col-1>
+            <img src="assets/images/green-bullet.png" style="width:40px; height:auto;">
+          </ion-col>
+          <ion-col>
+            <p class="night_mode" style="font-size: 4vw; text-align: left;">
+              {{ item }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <BR><BR>
+    </ion-slide>
+
+    <ion-slide>
+      <button ion-button block style="font-size: 4vw;">
+        <STRONG>GANHOS PARA SEU NEGÓCIO</STRONG>
+      </button>
+      <BR>
+      <ion-grid>
+        <ion-row *ngFor="let item of product.slide_desc_03">
+          <ion-col col-1>
+            <img src="assets/images/green-bullet.png" style="width:40px; height:auto;">
+          </ion-col>
+          <ion-col>
+            <p class="night_mode" style="font-size: 4vw; text-align: left;">
+              {{ item }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <BR><BR>
+    </ion-slide>
+  </ion-slides>
 </ion-card>
 
-<p class="night_mode">{{ product.description }}</p>
+<BR><BR>
 
-<button ion-button block onclick="window.open('https://www.petronect.com.br/irj/go/km/docs/pccshrcontent/TreinamentosForn/apresentacaoinstitucional-maio2018-pt.pdf', '_system', 'location=yes');">Veja mais</button>
+<button ion-button block onclick="window.open('https://www.petronect.com.br/irj/go/km/docs/pccshrcontent/TreinamentosForn/apresentacaoinstitucional-maio2018-pt.pdf', '_self', 'location=yes');" style="font-size: 2.3vh;">
+  <STRONG>VEJA MAIS</STRONG>
+</button>
 
 </ion-content>
